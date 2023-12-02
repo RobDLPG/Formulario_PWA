@@ -638,29 +638,31 @@
             });
         });
 
+        // Verificar la conexión al cargar la PWA
         window.addEventListener('load', () => {
-            if (!navigator.onLine) {
-                showSweetAlert('Oops!', 'No estás conectado a Internet.', 'error');
-            }
+          if (!navigator.onLine) {
+            showSweetAlert('Oops!', 'No estás conectado a Internet.', 'error');
+          }
         });
-
+        
         // Manejar eventos de conexión/desconexión
         window.addEventListener('online', () => {
-            hideSweetAlert();
+          hideSweetAlert();
         });
-
+        
         window.addEventListener('offline', () => {
-            showSweetAlert('Oops!', 'No estás conectado a Internet.', 'error');
+          showSweetAlert('Oops!', 'No estás conectado a Internet.', 'error');
         });
-
+        
         // Funciones para mostrar y ocultar el SweetAlert
         function showSweetAlert(title, text, icon) {
-            Swal.fire({
-                title: title,
-                text: text,
-                icon: icon,
-            });
+          swal({
+            title: title,
+            text: text,
+            icon: icon,
+          });
         }
+        
     </script>
 
 </body>
